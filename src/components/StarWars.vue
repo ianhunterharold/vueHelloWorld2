@@ -8,6 +8,22 @@
 
 <script>
 export default {
-  name: 'StarWars'
+  name: 'StarWars',
+data(){
+  return {
+    starwars: []
+    }
+  },
+  methods: {
+    getData(){
+    fetch('starwars.json')
+    .then(r => r.json())
+    .then(response => this.starwars = response.data.results)
+    }
+  },
+  created(){
+    this.getData();
+  }
+
 }
 </script>

@@ -4,6 +4,7 @@
   </div>
 </template>
 
+
 <script>
 import StarWars from './components/StarWars.vue'
 
