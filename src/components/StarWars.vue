@@ -3,6 +3,7 @@
 <template>
   <div>
       <h1>Star Wars!</h1>
+      {{starwars[0].name}}
   </div>
 </template>
 
@@ -16,9 +17,9 @@ data(){
   },
   methods: {
     getData(){
-    fetch('starwars.json')
-    .then(r => r.json())
-    .then(response => this.starwars = response.data.results)
+    fetch(`https://swapi.dev/api/people/10`)
+    .then(r => r.json() ) 
+    .then(response => this.starwars = response)
     }
   },
   created(){
